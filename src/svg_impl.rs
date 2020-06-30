@@ -185,6 +185,8 @@ impl<T: Num + NumCast + Copy + PartialOrd + Display> ToSvgStr for Geometry<T> {
             MultiLineString(multi_line_string) => multi_line_string.to_svg_str(style),
             MultiPolygon(multi_polygon) => multi_polygon.to_svg_str(style),
             GeometryCollection(geometry_collection) => geometry_collection.to_svg_str(style),
+            Rect(rect) => rect.to_svg_str(style),
+            Triangle(triangle) => triangle.to_svg_str(style),
         }
     }
 
@@ -199,6 +201,8 @@ impl<T: Num + NumCast + Copy + PartialOrd + Display> ToSvgStr for Geometry<T> {
             MultiLineString(multi_line_string) => multi_line_string.viewbox(style),
             MultiPolygon(multi_polygon) => multi_polygon.viewbox(style),
             GeometryCollection(geometry_collection) => geometry_collection.viewbox(style),
+            Rect(rect) => rect.viewbox(style),
+            Triangle(triangle) => triangle.viewbox(style),
         }
     }
 }
